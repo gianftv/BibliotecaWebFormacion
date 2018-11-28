@@ -17,7 +17,7 @@
           <%@include file="menu.jsp"%>
         <div class="form-control">
             <div class="table-header">
-                Desde aqui puede añadir o eliminar una categoria 
+                Desde aqui puede añadir o eliminar una editorial
             </div>
             <div>
                 <form action="EditorialController" method="post" class="form-horizontal"

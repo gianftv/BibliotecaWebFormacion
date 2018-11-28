@@ -74,23 +74,24 @@ public class EditorialController extends HttpServlet {
             throws ServletException, IOException {
         //processRequest(request, response);
         
-     String nit=request.getParameter("nit");
+        String nit=request.getParameter("nit");
         String nombre=request.getParameter("nombre");
         String telefono=request.getParameter("telefono");
         String direccion=request.getParameter("direccion");
         String email=request.getParameter("email");
         String sitioweb=request.getParameter("sitioweb");
         
+        //llamada al modelo.
         Editorial e = new Editorial();
-        e.setNit (nit);
+        e.setNit (nit);//ponerle lo que hemos sacado del request de arriba. 
         e.setNombre (nombre);
         e.setTelefono (telefono);
         e.setDireccion (direccion);
         e.setEmail (email);
         e.setSitioweb (sitioweb);
         
-        if (request.getParameter("Registrar")!= null){
-            if(EditorialDAO.registrar(e)){
+        if (request.getParameter("Registrar")!= null){//valida que el boton registar se ha pulsado(variable de sesion)nos trae todo del jsp
+            if(EditorialDAO.registrar(e)){//registra el objeto e en base al modelo que he importado
                 request.setAttribute("mensaje","La Editorial se ha registrado correctamente");
             }else{
                 request.setAttribute("mensaje","No se ha podido registrar la Editorial");
