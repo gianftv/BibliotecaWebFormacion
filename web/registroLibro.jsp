@@ -13,7 +13,9 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>JSP Page</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+        <title>Registro de Editoriales</title>
     </head>
     <body>
           <%@include file="menu.jsp"%>
@@ -72,7 +74,7 @@
                         </label>
                         <div class="col-sm-3">
 
-                            <input type="text" name="publicacion" value="" placeholder="2018-9-11" />
+                            <input type="text" name="publicacion" value="" placeholder="2018-09-11" />
                         </div>
 
                     </div>
@@ -98,7 +100,7 @@
                         </label>
                         <div class="col-sm-3">
 
-                            <input type="text" name="sitioWeb" value="" placeholder="Nombre del sitio web" />
+                            <input type="text" name="sitioweb" value="" placeholder="Nombre del sitio web" />
                         </div>
 
                     </div>
@@ -113,10 +115,10 @@
                         </label>
                         <div class="col-sm-3">
 
-                            <select name="">
+                            <select name="categoria">
                                 <option value="0"> Seleccione categoria</option>
                                 <% for(Categoria c:CategoriaDAO.listar()){%>
-                                <option value=""><%= c.getNombre()%></option>
+                                <option value="<%= c.getCodigo()%>"><%= c.getNombre()%></option>
                                 <% } %>
                             </select>
                         </div>
@@ -132,10 +134,10 @@
                         </label>
                         <div class="col-sm-3">
 
-                            <select name="">
-                                <option value="0"> Seleccione categoria</option>
+                            <select name="editorial">
+                                <option value="0"> Seleccione editorialeres</option>
                                 <% for(Editorial e:EditorialDAO.listar()){%>
-                                <option value=""><%= e.getNombre()%></option>
+                                <option value="<%= e.getNit()%>"><%= e.getNombre()%></option>
                                 <% } %>
                             </select>
                         </div>
