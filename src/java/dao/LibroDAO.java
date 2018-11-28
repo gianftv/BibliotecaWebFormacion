@@ -8,6 +8,7 @@ package dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+
 import model.Libro;
 
 /**
@@ -38,5 +39,53 @@ public class LibroDAO {
           
         }
 }
+    
+     public static boolean actualizar (Libro l){
+        try {
+            String SQL = "UPDATE libros SET" +
+                     "    titulo=?," +
+                     "    descripcion=?," +
+                     "    nombre_autor=?," +
+                     "    publicacion=?," +
+                     "    codigo_categoria=?," +
+                     "    nit_editorial=? " +
+                "    WHERE isbn=?";
+//          String SQL = "UPDATE libros SET titulo = ?, descripcion = ?, nombre_autor = ?, publicacion = ?, codigo_categoria = ?, nit_editorial = ? where isbn = ?";
+            Connection con = Conexion.conectar();
+            PreparedStatement st = con.prepareStatement (SQL); 
+            
+            st.setString(1, l.getTitulo());
+            st.setString(2, l.getDescripcion());
+            st.setString(3, l.getNombre_autor());
+            st.setString(4, l.getPublicacion()); 
+            st.setInt(5, l.getCodigo_categoria());
+            st.setString(6, l.getNit_editorial());
+            st.setString(7, l.getIsbn());
+            if(st.executeUpdate()>0){
+                
+                return true;
+            }else{
+                return false;
+            }
+        } catch (SQLException ex) {
+            return false;
+        }
+    }
+    public static boolean eliminar (Libro l){
+        try {
+            String SQL = "DELETE FROM libros WHERE isbn=?";
+            Connection con = Conexion.conectar();
+            PreparedStatement st = con.prepareStatement (SQL); 
+            st.setString(1, l.getIsbn());
+            if(st.executeUpdate()>0){
+                
+                return true;
+            }else{
+                return false;
+            }
+        } catch (SQLException ex) {
+            return false;
+        }
+    } 
     
 }

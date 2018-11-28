@@ -12,7 +12,7 @@
     </li> 
     <br>
      <li>
-        <a href="#">
+        <a href="registroLibro.jsp">
             <i class="menu-icon fa fa-caret-right"></i>
             Registrar libros
             

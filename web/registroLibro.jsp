@@ -117,7 +117,7 @@
                                 <option value="0"> Seleccione categoria</option>
                                 <% for(Categoria c:CategoriaDAO.listar()){%>
                                 <option value=""><%= c.getNombre()%></option>
-                                <% ; %>
+                                <% } %>
                             </select>
                         </div>
 
@@ -128,7 +128,7 @@
 
                         <label class="col-sm-3 control-label no-pair-right"     </label>
 
-                        Categorias :
+                        Editoriales :
                         </label>
                         <div class="col-sm-3">
 
@@ -136,7 +136,7 @@
                                 <option value="0"> Seleccione categoria</option>
                                 <% for(Editorial e:EditorialDAO.listar()){%>
                                 <option value=""><%= e.getNombre()%></option>
-                                <% ; %>
+                                <% } %>
                             </select>
                         </div>
 

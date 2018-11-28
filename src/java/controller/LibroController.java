@@ -92,6 +92,7 @@ public class LibroController extends HttpServlet {
         lib.setCodigo_categoria(categoria);
         lib.setNit_editorial(editorial);
         lib.setDescripcion(descripcion);
+        //fecha de registro es autoincremental, el solo la ingresa. 
         /* se puede colocar una variable delante de las acciones como por ejemplo bRegistrar
         * bActualizar o bEliminar y ser consecuentes y colocar la misma letra en el jsp de 
         * registroLibro, donde se encuentran los botones con las acciones aqui citadas
