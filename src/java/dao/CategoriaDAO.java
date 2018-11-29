@@ -70,6 +70,7 @@ public class CategoriaDAO {//abrir y cerra la conexion
             
             while (resultado.next()){
                 cat = new Categoria();
+                cat.setCodigo(resultado.getInt("codigo"));
                 cat.setNombre(resultado.getString("nombre"));
                 lista.add(cat);
             }

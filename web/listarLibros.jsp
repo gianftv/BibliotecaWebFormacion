@@ -23,7 +23,7 @@
         <div class="col-xs-12">
 								
 
-								<div class="row">
+								
 									<div class="col-xs-12">
 <!--										<div class="table-header">
 											Listado de libros registrados
@@ -43,6 +43,7 @@
                                                                                                 <th>Editorial</th>
 												<th>Categoría</th>
 												<th>Editar</th>
+                                                                                                <th>ERRADICAR</th>
                                                                                             </tr>
 											</thead>
 
@@ -57,7 +58,7 @@
                                                                                                 <td><%= l.getPublicacion()%></td>
                                                                                                 <td><span class="label label-sm label-success"><%= EditorialDAO.getEditorial(l.getNit_editorial())%></span></td>
                                                                                                 <td><span class="label label-sm label-success"><%= CategoriaDAO.getCategoria(l.getCodigo_categoria())%></span></td>
-
+                                                                                                  
                                                                                                 <td>
                                                                                                     <div class="hidden-sm hidden-xs action-buttons">
 <!--													<a class="blue" href="#">
@@ -65,21 +66,33 @@
 													</a>-->
 
 													<a class="green" href="registroLibro.jsp">
-                                                                                                            <i class="ace-icon fa fa-pencil bigger-130"></i>
+                                                                                                            <i class="ace-icon fa fa-pencil bigger-130">editar</i>
 													</a>
 
-													<a class="red" href="registroLibro.jsp">
-                                                                                                            <i class="ace-icon fa fa-trash-o bigger-130"></i>
-													</a>
+													
                                                                                                     </div>
-                                                                                                </td>            
+                                                                                                </td>  
+                                                                                                <td>
+                                                                                                    <div class="hidden-sm hidden-xs action-buttons">
+<!--													<a class="blue" href="#">
+                                                                                                            <i class="ace-icon fa fa-search-plus bigger-130"></i>
+													</a>-->
+                                                                                                                <button name="Eliminar" class="btn btn-danger" type="submit" value="Eliminar"
+                                                                                                                    <i class="fa fa-remove"></i>
+                                                                                                                                          Eliminar
+                                                                                                                </button>
+													
+
+													
+                                                                                                    </div>
+                                                                                                </td>  
                                                                                             </tr>
                                                                                             <%}%>
                                                                                         </tbody>
                                                                                     </table>
 										</div>
                                                                             </div><!-- /.modal-content -->
-									</div><!-- /.modal-dialog -->
+									
                                                                     </div>
 						
         
