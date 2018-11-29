@@ -77,11 +77,17 @@
 <!--													<a class="blue" href="#">
                                                                                                             <i class="ace-icon fa fa-search-plus bigger-130"></i>
 													</a>-->
-                                                                                                                <button name="Eliminar" class="btn btn-danger" type="submit" value="Eliminar"
+               <div>
+                <form action="LibroController" method="post" class="form-horizontal">
+     
+                
+                                                                                                       <button name="Eliminar" class="btn btn-danger" type="submit" value="Eliminar"
                                                                                                                     <i class="fa fa-remove"></i>
                                                                                                                                           Eliminar
                                                                                                                 </button>
-													
+                    </form>
+		 </div>
+                    
 
 													
                                                                                                     </div>
