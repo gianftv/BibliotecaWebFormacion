@@ -135,7 +135,7 @@
                         <div class="col-sm-3">
 
                             <select name="editorial">
-                                <option value="0"> Seleccione editorialeres</option>
+                                <option value="0"> Seleccione editoriales</option>
                                 <% for(Editorial e:EditorialDAO.listar()){%>
                                 <option value="<%= e.getNit()%>"><%= e.getNombre()%></option>
                                 <% } %>

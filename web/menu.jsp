@@ -4,7 +4,7 @@
 <ul>
     
     <li>
-        <a href="index.jsp">
+        <a href="listarLibros.jsp">
             <i class="menu-icon fa fa-caret-right"></i>
             Lista de Libros
             

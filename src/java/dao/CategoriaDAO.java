@@ -79,4 +79,22 @@ public class CategoriaDAO {//abrir y cerra la conexion
             return null;
         }
     }
+ 
+ public static String getCategoria(int cod){
+        
+         try {
+            String SQL = "SELECT nombre FROM categorias WHERE codigo=?";
+            Connection con = Conexion.conectar();
+            PreparedStatement st = con.prepareStatement (SQL); 
+            st.setInt(1, cod);
+            ResultSet resultado=st.executeQuery();
+            if(resultado.next()){
+                return resultado.getString("nombre");
+            }else{
+                return "nada de nada";
+            }
+        } catch (SQLException ex) {
+            return "se ha caido";
+        }
+    } 
 }
